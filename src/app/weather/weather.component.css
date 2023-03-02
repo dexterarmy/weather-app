@@ -1,0 +1,82 @@
+
+.city-temp{
+    width: 90%;
+}
+
+
+.city-temp h1{
+    text-align: center;
+    margin-top: 15rem; 
+    margin-bottom: 25px;
+    font-weight:100
+
+}
+ 
+ .weather{
+    width: 30%;
+    margin: auto ;
+    padding: 5rem;
+    box-shadow: 5px 5px 15px 5px #888888;
+    text-align: center;
+    animation: moveInBottom 1s ease-in;
+}
+
+img{
+    width: 25rem;
+    height: 25rem;
+    animation: moveInUp 1s ease-in;
+}
+
+input{
+    width: 70%;
+  padding: 8px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #161515;
+  color: #fff;
+  font-size: large;
+  
+}
+
+.weather-data{
+    font-size: large;
+    font-weight: 600;
+}
+
+.data{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px;
+}
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        ttransform: translateY(100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInUp{
+    0%{
+        opacity: 0;
+        ttransform: translateY(-100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.spinner{
+    margin: 100px auto 0;
+}
+

@@ -1,0 +1,43 @@
+
+<div class="city-temp" *ngIf="weather; else loader">
+    <h1>Find your city's temperature !</h1>
+<div class="weather" >
+    <div class="search">
+        <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+            <input type="text" placeholder="search for city" formControlName="city">
+        
+        </form> 
+    </div>
+    <div class="container" *ngIf="location; else errorData">
+        <div class="upper-data">
+            <img src="../../assets/hot.jpg" alt="hot" *ngIf="weather?.current_weather?.temperature > 15">
+            <img src="../../assets/cold.jpg" alt="hot" *ngIf="weather?.current_weather?.temperature <= 15 && weather?.current_weather?.temperature != null">
+
+            <div class="weather-data">
+                <div class="location-data data">
+                    <div class="location-label">Location: </div>
+                    <div class="location">{{location}}</div>
+                </div>
+                <div class="temperature-data data">
+                   <div class="temp-label">Temperature: </div>
+                   <div class="temperature">{{weather?.current_weather?.temperature}} °C</div>
+                </div>
+                <div class="wind-data data">
+                    <div class="wind-label">WindSpeed: </div>
+                    <div class="wind">{{weather?.current_weather?.windspeed}} km/h</div>
+                 </div>
+            </div>
+        </div>
+        
+    </div>
+    <ng-template #errorData>
+        <h1>City not found</h1>
+    </ng-template>
+    
+
+</div>
+</div>
+<ng-template #loader>
+    <mat-spinner class="spinner" [color]="color"></mat-spinner>
+    <!-- <h1 style="font-size: xx-large; text-align: center; margin-top: 100px;">Loading ...........................</h1> -->
+</ng-template>
